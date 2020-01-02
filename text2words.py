@@ -57,4 +57,8 @@ for text in texts:
 
 df['words_ls'] = words_ls
 
+<<<<<<< HEAD
 df.to_csv('data/text2words.csv', index=False)
+=======
+df.to_csv('data/text2words.csv', index=False)
+>>>>>>> aaa
