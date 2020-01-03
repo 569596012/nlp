@@ -13,3 +13,5 @@ model = FastText(size=256, window=5, min_count=20, hs=1, sg=1, negative=10, work
 model.save('model/fasttext.model')
 
 aa
+
+

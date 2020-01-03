@@ -1,9 +1,9 @@
-from gensim.models import Word2Vec
-from gensim import corpora, models
-from pprint import pprint
-model = models.Word2Vec.load('word2vec.model')
+from gensim.models import FastText
 
+model_dir = 'D:/PYCHARM/model/'
+model_name = 'fasttext.model'
+model = FastText.load(model_dir + model_name)
 
-word = '农业'
-aa = model.wv.most_similar([word], topn=30)
-pprint(aa)
+word = '5G'
+aa = model.wv.most_similar([word], topn=100)
+print(aa)
