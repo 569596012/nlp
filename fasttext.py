@@ -11,3 +11,5 @@ sentences = [list(filter(lambda x: len(x) <= 10, sentences[i])) for i in range(l
 model = FastText(size=256, window=5, min_count=20, hs=1, sg=1, negative=10, workers=8, sentences=sentences, iter=10)
 
 model.save('model/fasttext.model')
+
+aa
