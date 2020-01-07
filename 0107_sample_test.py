@@ -14,7 +14,7 @@ ja.set_stop_words(stopwords_file)
 data_dir = 'F:/DATA/NewsData/'
 file_name = 'all_news_data_0103.csv'
 df = pd.read_csv(data_dir + file_name)
-df = df[df['body_len'] < 512]
+df = df[df['body_len'] < 1024]
 
 # load 模型
 base_dir = 'F:/DATA/models/'
@@ -35,8 +35,8 @@ df_sim, all_sim_words = functions.get_sim_df(model, sets)
 write2txts = []
 count = 0
 thres = 1.5
-while count < 100:
-    result, write2txt = functions.sample_demo(df, df_sim, sets, thres)
+while count < 500:
+    result, write2txt = functions.sample_demo(df, df_sim, all_sim_words, sets, thres)
     write2txt = [str(write2txt[i]) + '\n' for i in range(len(write2txt))]
     write2txt = ['第' + str(count) + '个样例\n'] + write2txt
     write2txts = write2txts + write2txt
@@ -44,4 +44,4 @@ while count < 100:
     print(count)
 
 write_file = 'F:/DATA/data_0107/'
-open(write_file + 'test_samples_2.txt', 'w', encoding = 'utf-8').writelines(write2txts)
+open(write_file + 'test_samples_2.txt', 'w', encoding='utf-8').writelines(write2txts)

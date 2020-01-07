@@ -42,7 +42,7 @@ def get_sim_df(model, sets):
     return df_sim, all_sim_words
 
 
-def sample_demo(df, df_sim, sets, thres):
+def sample_demo(df, df_sim, all_sim_words, sets, thres):
     ss = 0
     write2txt = []
     while ss == 0:
