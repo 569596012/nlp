@@ -30,7 +30,7 @@ sets = ['人工智能', '5G', '半导体', '港口', '疫苗',
         '电池', '能源', '电力', '交通', '养殖']
 
 # 计算相似词矩阵，df格式
-df_sim, all_sim_words = functions.get_sim_df(sets)
+df_sim, all_sim_words = functions.get_sim_df(model, sets)
 
 write2txts = []
 count = 0

@@ -10,7 +10,7 @@ def tr(sent):
     return ja.textrank(sent, withWeight=True, topK=20, allowPOS=('ns', 'n', 'vn', 'v', 'x'))
 
 
-def get_sim_df(sets):
+def get_sim_df(model, sets):
     sim_words = []
     score_words = []
     cent_words = []
