@@ -23,7 +23,7 @@ stopwords = [stopwords[i].strip('\n') for i in range(len(stopwords))] + [' ']
 # 词性过滤
 flags = ('n', 'nr', 'ns', 'nt', 'eng', 'v', 'd', 'x')
 
-df = df[df['body_len'] < 512 ]
+df = df[df['body_len'] < 512]
 texts = list(df['news_body'])
 
 words_ls = []
@@ -37,7 +37,6 @@ for text in texts:
     if cc % 1000 == 0:
         print(cc)
 
-df.to_csv(data_dir + 'corpus(100~512)_0103.csv',index=False)
+df.to_csv(data_dir + 'corpus(100~512)_0103.csv', index=False)
 words_ls = [words_ls[i] + '\n' for i in range(len(words_ls))]
-open(data_dir + 'cut_words(100~512).txt','w',encoding='utf-8').writelines(words_ls)
-
+open(data_dir + 'cut_words(100~512).txt', 'w', encoding='utf-8').writelines(words_ls)
