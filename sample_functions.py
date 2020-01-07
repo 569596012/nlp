@@ -2,16 +2,12 @@ from gensim.models import FastText
 import jieba.analyse as ja
 import pandas as pd
 import numpy as np
-
-
+from itertools import chain
+import pprint
 
 
 def tr(sent):
     return ja.textrank(sent, withWeight=True, topK=20, allowPOS=('ns', 'n', 'vn', 'v', 'x'))
-
-
-from itertools import chain
-import pprint
 
 
 def get_sim_df(sets):
@@ -46,7 +42,7 @@ def get_sim_df(sets):
     return df_sim, all_sim_words
 
 
-def sample_demo(thres):
+def sample_demo(df, df_sim, sets, thres):
     ss = 0
     write2txt = []
     while ss == 0:
